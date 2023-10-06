@@ -1,0 +1,5 @@
+docker build -t commission-tracker . -> Build
+docker run -p 3000:3000 -d commission-tracker -> Run container in the background
+docker ps -a -> View containers
+docker restart 5f5a0ad1935b -> Restart container
+docker rm 577a8d24f1a6 1f9e7b5ed9d2 d30399a75c91 -> Remove containers

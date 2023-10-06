@@ -37,3 +37,4 @@ lerna-debug.log*
 .env
 
 sequelize.ps1
+sequelize.sh
