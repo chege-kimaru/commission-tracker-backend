@@ -32,9 +32,10 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
 
           script: |
-            cd misc/commission-tracker/commission-tracker-backend
+            cd misc/ct/commission-tracker-backend
             git stash
             git pull origin main
             npm install
             ./sequelize.sh migrate
+            docker build -t commission-tracker .
             docker restart ae822766a8df
