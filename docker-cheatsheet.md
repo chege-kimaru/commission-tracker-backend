@@ -51,3 +51,8 @@ docker restart 6bfd89314602
 ```
 docker rm containerId containerId d30399a75c91
 ```
+
+### Logging
+```
+docker logs containerId
+```

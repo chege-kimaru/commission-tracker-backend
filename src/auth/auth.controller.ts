@@ -68,10 +68,10 @@ export class AuthController {
       signed: true,
       httpOnly: true,
       secure: !UtilsService.isLocalhost(req),
-      expires: isLogout ? new Date(new Date().getTime() - 1) : new Date(new Date().getTime() + this.configService.get<number>('JWT_EXPIRATION_TIME')),
-      // maxAge: isLogout
-      //   ? 0
-      //   : this.configService.get<number>('JWT_EXPIRATION_TIME'), //5 days
+      maxAge: isLogout
+        ? 0
+        // : this.configService.get<number>('JWT_EXPIRATION_TIME'), //5 days
+        : 3 * 30 * 24 * 60 * 60 * 100, //5 days
       // TODO: RESERCH MORE ON THIS
       sameSite: UtilsService.isLocalhost(req) ? 'lax' : 'none',
     });
