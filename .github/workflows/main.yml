@@ -38,4 +38,3 @@ jobs:
             npm install
             ./sequelize.sh migrate
             docker build -t commission-tracker .
-            docker restart 6bfd89314602

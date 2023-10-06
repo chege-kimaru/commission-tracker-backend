@@ -56,3 +56,24 @@ docker rm containerId containerId d30399a75c91
 ```
 docker logs containerId
 ```
+
+
+### TODO
+- Build - Done by Github actions
+```
+docker build -t commission-tracker .
+```
+- Stop and remove previously running containers from commission-tracker image
+```
+docker ps -a
+docker stop containerId
+docker rm containerId constinerId
+```
+- Run
+```
+docker run --net=host -d --env-file .env  commission-tracker
+```
+- Remove older images of commission-tracker
+```
+docker rmi `docker images --filter dangling=true -q`
+```
