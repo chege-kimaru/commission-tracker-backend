@@ -12,6 +12,8 @@ RUN npm ci
 
 COPY --chown=node:node . .
 
+COPY --chown=node:node  .env ./
+
 USER node
 
 ###################
@@ -27,6 +29,8 @@ COPY --chown=node:node package*.json ./
 COPY --chown=node:node --from=development /usr/src/app/node_modules ./node_modules
 
 COPY --chown=node:node . .
+
+COPY --chown=node:node  .env ./
 
 RUN npm run build
 
