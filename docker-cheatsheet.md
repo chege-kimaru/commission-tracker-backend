@@ -26,7 +26,7 @@ docker run -p 4700:4700 -it --add-host=host.docker.internal:host-gateway commiss
 
 - Use this for deployment
 ```
-docker run --net=host -d commission-tracker
+docker run --net=host -d --env-file .env  commission-tracker
 ```
 
 ### View containers
@@ -44,7 +44,7 @@ docker start containerId
 docker restart containerId
 ```
 ```
-docker restart ae822766a8df
+docker restart 6bfd89314602
 ```
 
 ### Remove containers
